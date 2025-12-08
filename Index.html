@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sero Kitchen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* CSS */
+    :root{--y:#FFB84C;--yd:#F4A300;--l:#fff8f0;--d:#2c3e50}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;background:var(--l);color:#333}
+    header{background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.75)),url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80')center/cover no-repeat;color:#fff;text-align:center;padding:120px 20px 80px}
+    .logo-img{width:130px;height:130px;border-radius:50%;border:6px solid var(--y);margin-bottom:15px}
+    h1{font-family:'Dancing Script',cursive;font-size:4.5rem;color:var(--y);margin:10px 0}
+    .tagline{font-size:1.3rem;max-width:900px;margin:0 auto}
+    .social-bar{background:var(--y);padding:15px 0;text-align:center}
+    .social-links a{color:#fff;font-size:2rem;margin:0 20px}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    h2{font-size:2.5rem;color:var(--yd);text-align:center;margin:50px 0 30px}
+
+    /* Filter */
+    .filter{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:20px 0}
+    .ftab{background:#fff9f0;padding:10px 25px;border-radius:50px;cursor:pointer;font-weight:600;border:1px solid var(--y)}
+    .ftab.active{background:var(--y);color:#fff;border-color:var(--y)}
+
+    /* Produk */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-bottom:60px}
+    .card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.1);text-align:center;transition:transform 0.3s ease}
+    .card:hover{transform:translateY(-5px)}
+    .card img{width:100%;height:220px;object-fit:cover;display:block}
+    .card h3{font-size:1.3rem;margin:15px 0 8px;padding:0 10px}
+    .price{font-size:1.6rem;font-weight:700;color:var(--yd);margin:8px 0}
+    .btn{background:var(--y);color:#fff;padding:12px 0;border:none;border-radius:50px;width:90%;font-size:1.1rem;cursor:pointer;margin-bottom:20px;transition:background 0.3s}
+    .btn:hover{background:var(--yd)}
+
+    /* Modal */
+    #modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;z-index:999;padding:15px}
+    .box{background:#fff;border-radius:25px;max-width:600px;width:100%;max-height:90vh;overflow-y:auto;padding:30px;position:relative}
+    .close{position:absolute;top:10px;right:15px;font-size:2.5rem;cursor:pointer;color:#999}
+    .item{display:flex;justify-content:space-between;align-items:center;background:#fff9f0;padding:15px;margin:12px 0;border-radius:15px}
+    .qty{display:flex;align-items:center;gap:10px}
+    .qb{width:40px;height:40px;border-radius:50%;background:var(--y);color:#fff;font-size:1.5rem;border:none;cursor:pointer}
+    .qi{width:70px;padding:8px;text-align:center;border:2px solid var(--y);border-radius:10px;font-weight:bold}
+    .summary{background:#fff9f0;padding:20px;border-radius:15px;margin:20px 0}
+    input,textarea{width:100%;padding:15px;margin:10px 0;border:2px solid #eee;border-radius:12px;font-size:1rem}
+    .send{background:var(--y);color:#fff;padding:18px;border:none;border-radius:50px;font-size:1.3rem;cursor:pointer;width:100%}
+    .item-row{display:flex;justify-content:space-between;margin-bottom:5px}
+
+    /* Footer - Tambahan */
+    footer{background:var(--d);color:#fff;padding:40px 20px;text-align:center;margin-top:50px}
+    footer h3{color:var(--y);margin-bottom:15px}
+    .address-box{max-width:600px;margin:0 auto;background:rgba(255,255,255,0.1);padding:20px;border-radius:10px;font-size:1.1rem;line-height:1.5}
+    .address-box i{font-size:1.5rem;margin-right:10px;color:var(--y)}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <img src="https://i.ibb.co.com/hRrkYQ1Q/sero-kitchen-logo.jpg" alt="Sero Kitchen" class="logo-img">
+    <h1>Sero Kitchen</h1>
+    <p class="tagline">Roti, kue, donat, dessert & risol premium homemade • Fresh • Halal • Rasa bikin nagih • Dijamin puas • Sumatera Barat</p>
+  </div>
+</header>
+
+<div class="social-bar">
+  <div class="container social-links">
+    <a href="https://instagram.com/serokitchen.id" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://wa.me/6285263318410" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:kitchensero@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Selamat menikmati</h2>
+  <div class="filter">
+    <div class="ftab active" onclick="filt('all')">Semua</div>
+    <div class="ftab" onclick="filt('Roti')">Roti</div>
+    <div class="ftab" onclick="filt('Donat')">Donat</div>
+    <div class="ftab" onclick="filt('Dessert')">Dessert</div>
+    <div class="ftab" onclick="filt('Kue')">Kue</div>
+    <div class="ftab" onclick="filt('Risol')">Risol</div>
+    <div class="ftab" onclick="filt('Lainnya')">Lainnya</div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</div>
+
+<div id="modal">
+  <div class="box">
+    <span class="close" onclick="document.getElementById('modal').style.display='none'">×</span>
+    <h2 style="text-align:center;color:var(--yd)">Menu kami</h2>
+    <div id="list"></div>
+    <div class="summary" id="sum"><em>Belum ada pesanan</em></div>
+    <form onsubmit="kirim(event)">
+      <input type="text" id="inputNama" placeholder="Nama Lengkap" required>
+      <input type="text" id="inputAlamat" placeholder="Alamat Lengkap" required>
+      <textarea id="inputCatatan" placeholder="Catatan (opsional)" rows="3"></textarea>
+      <button type="submit" class="send">Kirim via WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="address-box">
+      <i class="fas fa-map-marker-alt"></i>
+      Depan Pesantren Al-Hidayah Lubuk Bonta, Kepala Hilalang, KAB. PADANG PARIAMAN, 2 X 11 KAYU TANAM, SUMATERA BARAT, ID, 25585
+    </div>
+  </div>
+</footer>
+
+<script>
+// DAFTAR PRODUK BARU
+const produk = [
+  // Donat
+  {n:"donat", h:13000, u:"pcs", g:"https://www.unileverfoodsolutions.co.id/dam/global-ufs/mcos/SEA/calcmenu/recipes/ID-recipes/desserts-&-bakery/donat-kentang/main-header.jpg", k:"Donat"},
+  {n:"bomboloni", h:8000, u:"pcs", g:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpwq6zziOS8REa5iLDsnhyLXHMPsLs7nS96sqfaYG0-JCuFowMC_uVQiBs&s=10", k:"Donat"},
+  // Dessert
+  {n:"dessert black forest", h:15000, u:"cup", g:"https://asset.kompas.com/crops/1mpDWvxMzGD33hxdxJZYIfcRUVw=/4x535:828x1085/1200x800/data/photo/2020/06/19/5eec61f73e72a.jpeg", k:"Dessert"},
+  {n:"dessert red Velvet", h:15000, u:"cup", g:"https://img-global.cpcdn.com/recipes/57946165f8e83495/1200x630cq80/photo.jpg", k:"Dessert"},
+  // Roti
+  {n:"roti pizza", h:5000, u:"pcs", g:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmM9mZfwp1Czxg_MZ0VJE6cLVYIYSB4hFMurf7hcql7Q&s=10", k:"Roti"},
+  {n:"roti piscok", h:5000, u:"pcs", g:"https://static.promediateknologi.id/crop/15x83:704x742/750x500/webp/photo/p1/1067/2025/03/26/20250326_141933-3658896312.jpg", k:"Roti"},
+  {n:"roti keju", h:5000, u:"pcs", g:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjCxmhqrB2v_0pxRqhVqnjKpTNuzS3PTWv6c0VtW3elzKtzTK3IfZjwkAO&s=10", k:"Roti"},
+  {n:"roti bluberi", h:5000, u:"pcs", g:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIbd5JTeC1LEndo663k3HEncVknvoLP1ruLCDCc6M7JN-0ACZVnFSzIpix&s=10", k:"Roti"},
+  {n:"roti coklat", h:5000, u:"pcs", g:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpOzjs-5-ptie-l75YkdBmLUkX6vjuB2XXtbyKDYDMpA&s=10", k:"Roti"},
+  {n:"roti o", h:5000, u:"pcs", g:"https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,f_auto,q_auto:best,w_640/v1634025439/01k6ck7hkgy1w5mjcejvmz7tdk.jpg", k:"Roti"},
+  {n:"roti tawar", h:10000, u:"bungkus", g:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSijjGOfD_qYoo7QwspMfFLU7P-kw4wyHDeUNsudkeKMk1OqdKgCAx0OpRa&s=10", k:"Roti"},
+  {n:"roti kukus coklat kacang", h:7000, u:"pcs", g:"https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/77581058-f23e-4c87-bd1d-7b3b8bbbbe20_IMG_20210213_124226_955.jpg", k:"Roti"},
+  {n:"roti kukus tiramisu", h:7000, u:"pcs", g:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzHiY_kamUebBBAm_f-EXD4t04WePTyHfwiyu_mkoDMwhNVlx4Oaer83A&s=10", k:"Roti"},
+  {n:"roti bakar", h:3000, u:"slice", g:"https://cdn.yummy.co.id/content-images/images/20231121/uLzYfWthFfeE97voURJ5XPHVY8Vt9dd7-31373030353532303332d41d8cd98f00b204e9800998ecf8427e.jpg?x-oss-process=image/resize,w_388,h_388,m_fixed,x-oss-process=image/format,webp", k:"Lainnya"},
+  {n:"sandwich", h:6000, u:"pcs", g:"https://www.tasteofhome.com/wp-content/uploads/2025/04/Turkey-Club-Sandwich_FT25_278726_EC_0408_5.jpg?fit=700,1024", k:"Lainnya"},
+  // Kue
+  {n:"kue bolu", h:30000, u:"box", g:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfqULy5kiLgIAtxOZhNdj0qjINxk_dKiP_2GRk3Jb29frQqjDKpsYY7pWE&s=10", k:"Kue"},
+  {n:"kue tape", h:35000, u:"box", g:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJtQ6Df83yE1EVQ1PoHZRH-usDhnRJbblgedB9Vjo81ZiB737PXvQCSi06&s=10", k:"Kue"},
+  // Risol
+  {n:"risol mayo", h:2000, u:"pcs", g:"https://buckets.sasa.co.id/v1/AUTH_Assets/Assets/p/website/medias/user-recipes/8e07122e522a407164608a7919612835.jpg", k:"Risol"}
+];
+
+
+let keranjang = Array(produk.length).fill(0);
+
+function tampil(filter='all'){
+  const g = document.getElementById('grid');
+  g.innerHTML = '';
+  produk.filter(p=>filter==='all'||p.k===filter).forEach((p,i)=>{
+    g.innerHTML += `
+      <div class="card">
+        <img src="${p.g}" alt="${p.n}" loading="lazy">
+        <h3>${p.n.toUpperCase()}</h3>
+        <div class="price">Rp ${p.h.toLocaleString('id-ID')}</div>
+        <button class="btn" onclick="tambahPesan(${i}); bukaModal();">Pesan Sekarang</button>
+      </div>`;
+  });
+}
+tampil();
+
+function tambahPesan(i) {
+    keranjang[i] = Math.max(0, keranjang[i] + 1);
+}
+
+function filt(kat){
+  document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('active'));
+  const activeTab = document.querySelector(`.ftab[onclick="filt('${kat}')"]`);
+  if (activeTab) {
+      activeTab.classList.add('active');
+  }
+  tampil(kat);
+}
+
+function bukaModal(){
+  const l = document.getElementById('list');
+  l.innerHTML = '';
+  produk.forEach((p,i)=>{
+    l.innerHTML += `
+      <div class="item">
+        <div>
+          <strong>${p.n.toUpperCase()}</strong><br>
+          <small>Rp ${p.h.toLocaleString('id-ID')} / ${p.u}</small>
+        </div>
+        <div class="qty">
+          <button class="qb" onclick="ubah(${i},-1)">−</button>
+          <input type="number" value="${keranjang[i]}" id="q${i}" class="qi" min="0" onchange="ubah(${i},parseInt(this.value)-keranjang[i])">
+          <button class="qb" onclick="ubah(${i},1)">+</button>
+        </div>
+      </div>`;
+  });
+  updateRingkasan();
+  document.getElementById('modal').style.display='flex';
+}
+
+function ubah(i,delta){
+  if(typeof delta === 'string') delta = parseInt(delta); 
+  keranjang[i] = Math.max(0, keranjang[i] + delta);
+  // Perbarui nilai di modal jika input ada
+  const inputQty = document.getElementById('q'+i);
+  if (inputQty) inputQty.value = keranjang[i];
+  updateRingkasan();
+}
+
+function updateRingkasan(){
+  let html = '<strong>Pesanan kamu:</strong><br>', total=0, ada=false;
+  produk.forEach((p,i)=>{
+    if(keranjang[i]>0){
+      ada=true;
+      const sub = keranjang[i]*p.h;
+      total += sub;
+      html += `<div class="item-row"><span>${keranjang[i]} ${p.u} ${p.n.toUpperCase()}</span><span>Rp ${sub.toLocaleString('id-ID')}</span></div>`;
+    }
+  });
+  if(ada){
+    html += `<div style="margin-top:15px;padding-top:10px;border-top:3px solid var(--y);font-weight:bold;font-size:1.3rem;color:var(--yd);text-align:right">
+               Total: Rp ${total.toLocaleString('id-ID')}</div>`;
+  }else html = '<em>Belum ada pesanan</em>';
+  document.getElementById('sum').innerHTML = html;
+}
+
+function kirim(e){
+  e.preventDefault();
+  const nama = document.getElementById('inputNama').value.trim();
+  const alamat = document.getElementById('inputAlamat').value.trim();
+  const catatan = document.getElementById('inputCatatan').value.trim();
+  const waktu = new Date().toLocaleString('id-ID');
+
+  let pesanRincian = [], total=0;
+  produk.forEach((p,i)=>{
+    if(keranjang[i]>0){
+      const sub = keranjang[i]*p.h;
+      total += sub;
+      // Format rincian pesanan untuk WhatsApp
+      pesanRincian.push(`${p.n.toUpperCase()}: ${keranjang[i]} ${p.u}`);
+    }
+  });
+
+  if(pesanRincian.length===0) return alert('Pilih produk dulu ya!');
+
+  // Menggunakan format yang Anda minta
+  const teks = encodeURIComponent(
+    `✨ *PESANAN BARU* ✨\n\n` +
+    `Halo, Saya ingin memesan produk berikut:\n\n` +
+    `📝 *Rincian Pesanan:*\n` +
+    `${pesanRincian.join('\n')}\n\n` +
+    `💰 *Total Belanja:* Rp ${total.toLocaleString('id-ID')}\n\n` +
+    `🏠 *Detail Pengiriman:*\n` +
+    `Nama Penerima: ${nama}\n` +
+    `Alamat Lengkap: ${alamat}\n\n` +
+    (catatan ? `📌 *Catatan Khusus:*\n${catatan} 🙏\n\n` : '') +
+    `Mohon konfirmasi ketersediaan barang, detail jumlah pembayaran beserta transfernya. Terima kasih! 😊`
+  );
+  
+  location.href = `https://wa.me/6285263318410?text=${teks}`;
+  document.getElementById('modal').style.display='none';
+  
+  // Reset keranjang setelah dikirim
+  keranjang = Array(produk.length).fill(0);
+  document.getElementById('inputNama').value = '';
+  document.getElementById('inputAlamat').value = '';
+  document.getElementById('inputCatatan').value = '';
+}
+
+window.onclick=e=>{if(e.target===document.getElementById('modal')) document.getElementById('modal').style.display='none';}
+</script>
+</body>
+  </html>
+  
